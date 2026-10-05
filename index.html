@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ka" id="htmlRoot">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta_title">სარეცხი და ჭურჭლის სარეცხი მანქანების შეკეთება</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .lang-switcher select {
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e4ed8, #2563eb);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            background: #ffffff;
+            color: var(--primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #f1f5f9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .card ul {
+            list-style-type: disc;
+            margin-left: 1.2rem;
+            margin-top: 1rem;
+            color: var(--gray);
+        }
+
+        .contact-section {
+            background: var(--card-bg);
+            border-top: 1px solid var(--border);
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-box p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        .phone-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #0f172a;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" data-i18n="logo_text">🔧 GeoService Fix</div>
+        <div class="lang-switcher">
+            <select id="langSelect" onchange="changeLanguage(this.value)">
+                <option value="ka">ქართული</option>
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1 data-i18n="hero_title">სარეცხი და ჭურჭლის სარეცხი მანქანების პროფესიონალური შეკეთება</h1>
+        <p data-i18n="hero_subtitle">სწრაფი გამოძახება სახლში, გარანტიით და ხარისხიანად მთელ საქართველოში.</p>
+        <a href="#contact" class="btn" data-i18n="hero_btn">გამოძახება</a>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title" data-i18n="services_heading">ჩვენი მომსახურება</h2>
+        <div class="services-grid">
+            
+            <div class="card">
+                <h3 data-i18n="service_wash_title">სარეცხი მანქანების შეკეთება</h3>
+                <p data-i18n="service_wash_desc">ვათვალიერებთ და ვათავისუფლებთ ნებისმიერი სირთულის დაზიანებისგან: არ რთავს, არ აცხელებს წყალს, ღრიალებს ან არ წურავს.</p>
+                <ul>
+                    <li data-i18n="wash_li_1">ტამბურისა და ძრავის შეკეთება</li>
+                    <li data-i18n="wash_li_2">ტუმბოს (სპილენძის/ტუმბოს) შეცვლა</li>
+                    <li data-i18n="wash_li_3">ელექტრონული დაფის აღდგენა</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 data-i18n="service_dish_title">ჭურჭლის სარეცხი მანქანების შეკეთება</h3>
+                <p data-i18n="service_dish_desc">თქვენი ჭურჭლის სარეცხი მანქანა კარგად აღარ რეცხავს ან ატარებს წყალს? მოვახდენთ ადგილზე დიაგნოსტიკასა და შეკეთებას.</p>
+                <ul>
+                    <li data-i18n="dish_li_1">წყლის მიწოდებისა და გაჟონვის აღმოფხვრა</li>
+                    <li data-i18n="dish_li_2">გამაცხელებელი ელემენტის შეცვლა</li>
+                    <li data-i18n="dish_li_3">ფილტრებისა და სადინარების გაწმენდა</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-box">
+            <h2 class="section-title" data-i18n="contact_heading" style="margin-bottom: 1rem;">დაგვიკავშირდით</h2>
+            <p data-i18n="contact_text">დაგვირეკეთ ნებისმიერ დროს, ვმუშაობთ ყოველდღე.</p>
+            <a href="tel:+995500000000" class="phone-number">+995 500 00 00 00</a>
+        </div>
+    </section>
+
+    <footer>
+        <p data-i18n="footer_text">&copy; 2026 GeoService Fix. ყველა უფლება დაცულია.</p>
+    </footer>
+
+    <script>
+        const translations = {
+            ka: {
+                meta_title: "სარეცხი და ჭურჭლის სარეცხი მანქანების შეკეთება",
+                logo_text: "🔧 GeoService Fix",
+                hero_title: "სარეცხი და ჭურჭლის სარეცხი მანქანების პროფესიონალური შეკეთება",
+                hero_subtitle: "სწრაფი გამოძახება სახლში, გარანტიით და ხარისხიანად.",
+                hero_btn: "ოსტატის გამოძახება",
+                services_heading: "ჩვენი მომსახურება",
+                service_wash_title: "სარეცხი მანქანების შეკეთება",
+                service_wash_desc: "ვათვალიერებთ და ვათავისუფლებთ ნებისმიერი სირთულის დაზიანებისგან: არ რთავს, არ აცხელებს წყალს, ღრიალებს ან არ წურავს.",
+                wash_li_1: "დოლურისა და ძრავის შეკეთება",
+                wash_li_2: "ტუმბოსა და სადინარების შეცვლა",
+                wash_li_3: "ელექტრონული დაფის აღდგენა",
+                service_dish_title: "ჭურჭლის სარეცხი მანქანების შეკეთება",
+                service_dish_desc: "თქვენი ჭურჭლის სარეცხი მანქანა კარგად აღარ რეცხავს ან ატარებს წყალს? მოვახდენთ ადგილზე დიაგნოსტიკასა და შეკეთებას.",
+                dish_li_1: "წყლის მიწოდებისა და გაჟონვის აღმოფხვრა",
+                dish_li_2: "გამაცხელებელი ელემენტის შეცვლა",
+                dish_li_3: "ფილტრებისა და სადინარების გაწმენდა",
+                contact_heading: "დაგვიკავშირდით",
+                contact_text: "დაგვირეკეთ ნებისმიერ დროს, ვმუშაობთ ყოველდღე.",
+                footer_text: "© 2026 GeoService Fix. ყველა უფლება დაცულია."
+            },
+            ru: {
+                meta_title: "Ремонт стиральных и посудомоечных машин в Грузии",
+                logo_text: "🔧 GeoService Fix",
+                hero_title: "Профессиональный ремонт стиральных и посудомоечных машин",
+                hero_subtitle: "Быстрый выезд на дом, с гарантией и высоким качеством.",
+                hero_btn: "Вызвать мастера",
+                services_heading: "Наши услуги",
+                service_wash_title: "Ремонт стиральных машин",
+                service_wash_desc: "Устраняем любые неисправности: не включается, не греет воду, шумит, не отжимает или течет.",
+                wash_li_1: "Ремонт барабана и мотора",
+                wash_li_2: "Замена помпы и патрубков",
+                wash_li_3: "Восстановление электронной платы",
+                service_dish_title: "Ремонт посудомоечных машин",
+                service_dish_desc: "Ваша посудомоечная машина плохо моет посуду или под ней появляется вода? Проведем диагностику на дому.",
+                dish_li_1: "Устранение протечек воды",
+                dish_li_2: "Замена ТЭНа (нагревателя)",
+                dish_li_3: "Очистка фильтров и сливной системы",
+                contact_heading: "Свяжитесь с нами",
+                contact_text: "Звоните в любое время, работаем без выходных.",
+                footer_text: "© 2026 GeoService Fix. Все права защищены."
+            },
+            en: {
+                meta_title: "Washing Machine & Dishwasher Repair",
+                logo_text: "🔧 GeoService Fix",
+                hero_title: "Professional Washing Machine & Dishwasher Repair",
+                hero_subtitle: "Fast home service with warranty and high quality.",
+                hero_btn: "Call a Technician",
+                services_heading: "Our Services",
+                service_wash_title: "Washing Machine Repair",
+                service_wash_desc: "We fix all types of faults: won't start, won't heat water, makes noise, doesn't spin or leaks.",
+                wash_li_1: "Drum and motor repair",
+                wash_li_2: "Drain pump replacement",
+                wash_li_3: "Control board restoration",
+                service_dish_title: "Dishwasher Repair",
+                service_dish_desc: "Is your dishwasher not cleaning properly or leaking? We will diagnose and repair it at your home.",
+                dish_li_1: "Water leak troubleshooting",
+                dish_li_2: "Heating element replacement",
+                dish_li_3: "Filter and drainage system cleaning",
+                contact_heading: "Contact Us",
+                contact_text: "Call us anytime, we work every day.",
+                footer_text: "© 2026 GeoService Fix. All rights reserved."
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.getElementById('htmlRoot').setAttribute('lang', lang);
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.features = elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            localStorage.setItem('selectedLang', lang);
+        }
+
+        // Загрузка сохраненного языка при открытии
+        window.onload = function() {
+            const savedLang = localStorage.getItem('selectedLang') || 'ka';
+            document.getElementById('langSelect').value = savedLang;
+            changeLanguage(savedLang);
+        };
+    </script>
+</body>
+</html>
