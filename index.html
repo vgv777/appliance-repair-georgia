@@ -142,7 +142,7 @@
             transform: translateY(-2px);
         }
 
-        /* Фоновые анимации инструментов */
+        /* Фоновые анимации инструментов (крупные и хорошо видимые) */
         .bg-animations {
             position: absolute;
             top: 0;
@@ -155,35 +155,36 @@
 
         .tool-icon {
             position: absolute;
-            opacity: 0.12;
-            fill: #ffffff;
+            fill: rgba(255, 255, 255, 0.25);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
         }
 
-        /* 1. Отвертка (вращается) */
+        /* 1. Отвертка слева (вращается) */
         .tool-screwdriver {
             top: 15%;
-            left: 10%;
-            width: 50px;
-            height: 50px;
-            animation: rotateTool 8s linear infinite;
+            left: 8%;
+            width: 85px;
+            height: 85px;
+            animation: rotateTool 9s linear infinite;
         }
 
-        /* 2. Гаечный ключ (вращается в другую сторону) */
+        /* 2. Гаечный ключ справа снизу (вращается в другую сторону) */
         .tool-wrench {
-            bottom: 20%;
-            right: 12%;
-            width: 55px;
-            height: 55px;
-            animation: rotateToolReverse 10s linear infinite;
+            bottom: 12%;
+            right: 10%;
+            width: 90px;
+            height: 90px;
+            animation: rotateToolReverse 11s linear infinite;
         }
 
-        /* 3. Плоскогубцы (открываются и закрываются) */
+        /* 3. Плоскогубцы справа сверху (открываются и закрываются) */
         .tool-pliers {
-            top: 25%;
-            right: 15%;
-            width: 60px;
-            height: 60px;
-            animation: openClosePliers 3s ease-in-out infinite;
+            top: 15%;
+            right: 12%;
+            width: 95px;
+            height: 95px;
+            animation: openClosePliers 3.5s ease-in-out infinite;
+            transform-origin: center;
         }
 
         @keyframes rotateTool {
@@ -197,8 +198,8 @@
         }
 
         @keyframes openClosePliers {
-            0%, 100% { transform: scale(1) rotate(-15deg); }
-            50% { transform: scale(0.85) rotate(15deg); }
+            0%, 100% { transform: scale(1) rotate(-10deg); }
+            50% { transform: scale(0.8) rotate(20deg); }
         }
 
         .container {
@@ -314,14 +315,20 @@
     </header>
 
     <section class="hero">
-        <!-- Фоновые анимации инструментов -->
+        <!-- Фоновые анимированные инструменты -->
         <div class="bg-animations">
             <!-- Отвертка -->
-            <svg class="tool-icon tool-screwdriver" viewBox="0 0 24 24"><path d="M7 14l-3 3v3h3l3-3-3-3zM14.06 5.94l3 3L21 5.88l-3-3-3.94 3.06zM17.41 2.59c-.78-.78-2.05-.78-2.83 0l-9.9 9.9c-.78.78-.78 2.05 0 2.83l1.41 1.41c.78.78 2.05.78 2.83 0l9.9-9.9c.78-.78.78-2.05 0-2.83l-1.41-1.41z"/></svg>
+            <svg class="tool-icon tool-screwdriver" viewBox="0 0 24 24">
+                <path d="M19 3a2.5 2.5 0 0 0-1.77.73l-4.5 4.5a1 1 0 0 0-.27.5l-1 4a1 1 0 0 0 1.21 1.21l4-1a1 1 0 0 0 .5-.27l4.5-4.5A2.5 2.5 0 0 0 19 3zm-9 11l-3 3-2-5 5 2zm-5 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1H5v-1z"/>
+            </svg>
             <!-- Гаечный ключ -->
-            <svg class="tool-icon tool-wrench" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.5-7.4-1.6l6.5 6.5-3.5 3.5-6.5-6.5C.9 9 1.4 12 3.4 14c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l1.9-1.9c.5-.4.5-1.1 0-1.6z"/></svg>
+            <svg class="tool-icon tool-wrench" viewBox="0 0 24 24">
+                <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.5-7.4-1.6l6.5 6.5-3.5 3.5-6.5-6.5C.9 9 1.4 12 3.4 14c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l1.9-1.9c.5-.4.5-1.1 0-1.6z"/>
+            </svg>
             <!-- Плоскогубцы -->
-            <svg class="tool-icon tool-pliers" viewBox="0 0 24 24"><path d="M15 3L9 9l2 2 6-6-2-2zM4 11l5 5 1-1-5-5-1 1zm12 5l-4-4 2-2 4 4-2 2zm-5.5 3.5L12 21l3-3-1.5-1.5-3 3z"/></svg>
+            <svg class="tool-icon tool-pliers" viewBox="0 0 24 24">
+                <path d="M15.5 2.5a3 3 0 0 0-3 3l-1.4 1.4-6.3 6.3a2 2 0 0 0 0 2.8l2.8 2.8a2 2 0 0 0 2.8 0l6.3-6.3L18.5 11.5a3 3 0 0 0-3-9zM8 17.5l-1.5-1.5 5-5 1.5 1.5-5 5z"/>
+            </svg>
         </div>
 
         <div class="hero-content">
