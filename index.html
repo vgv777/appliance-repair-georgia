@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="meta_title">სარეცხი და ჭურჭლის სარეცხი მანქანების შეკეთება თბილისში</title>
-    <meta name="description" content="پПрофессиональный ремонт стиральных и посудомоечных машин на дому в Тбилиси. Выезд мастера, гарантия качества." id="metaDesc">
+    <meta name="description" content="Профессиональный ремонт стиральных и посудомоечных машин на дому в Тбилиси. Выезд мастера, гарантия качества." id="metaDesc">
     
     <!-- SEO & Microdata Schema.org for Local Business -->
     <script type="application/ld+json">
@@ -21,7 +21,6 @@
       },
       "priceRange": "$$",
       "openingHours": "Mo-Su 08:00-21:00",
-      "servesCuisine": false,
       "description": "Professional washing machine and dishwasher repair service in Tbilisi."
     }
     </script>
@@ -60,6 +59,8 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .logo {
@@ -68,14 +69,33 @@
             color: var(--primary);
         }
 
-        .lang-switcher select {
-            padding: 0.5rem;
-            border-radius: 0.375rem;
-            border: 1px solid var(--border);
+        /* Кнопки переключения языков */
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
             background: var(--card-bg);
+            border: 1px solid var(--border);
             color: var(--text-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.375rem;
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
         }
 
         .hero {
@@ -217,12 +237,11 @@
 
     <header>
         <div class="logo" data-i18n="logo_text">🔧 GeoService Fix Tbilisi</div>
+        <!-- Кнопки выбора языка -->
         <div class="lang-switcher">
-            <select id="langSelect" onchange="changeLanguage(this.value)">
-                <option value="ka">ქართული</option>
-                <option value="ru">Русский</option>
-                <option value="en">English</option>
-            </select>
+            <button class="lang-btn active" id="btn-ka" onclick="changeLanguage('ka')">ქართული</button>
+            <button class="lang-btn" id="btn-ru" onclick="changeLanguage('ru')">Русский</button>
+            <button class="lang-btn" id="btn-en" onclick="changeLanguage('en')">English</button>
         </div>
     </header>
 
@@ -275,7 +294,7 @@
                         <td>20 - 40 GEL</td>
                     </tr>
                     <tr>
-                        <td data-i18n="pr_2">ტუმბოს (სპილენძის) შეცვლა / შეკეთება</td>
+                        <td data-i18n="pr_2">ტუმბოს შეცვლა / შეკეთება</td>
                         <td>60 - 120 GEL</td>
                     </tr>
                     <tr>
@@ -283,7 +302,7 @@
                         <td>70 - 150 GEL</td>
                     </tr>
                     <tr>
-                        <td data-i18n="pr_4">ელექტრონული დაფის (მოდულის) შეკეთება</td>
+                        <td data-i18n="pr_4">ელექტრონული დაფის შეკეთება</td>
                         <td>80 - 250 GEL</td>
                     </tr>
                 </tbody>
@@ -397,12 +416,17 @@
         function changeLanguage(lang) {
             document.getElementById('htmlRoot').setAttribute('lang', lang);
             
-            // Обновляем title и description динамически
+            // Меняем активную кнопку
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            // Обновляем title и description
             if (translations[lang]) {
                 document.title = translations[lang].meta_title;
                 document.getElementById('metaDesc').setAttribute('content', translations[lang].meta_desc);
             }
 
+            // Меняем текст элементов
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -410,12 +434,12 @@
                     el.textContent = translations[lang][key];
                 }
             });
+
             localStorage.setItem('selectedLang', lang);
         }
 
         window.onload = function() {
             const savedLang = localStorage.getItem('selectedLang') || 'ka';
-            document.getElementById('langSelect').value = savedLang;
             changeLanguage(savedLang);
         };
     </script>
