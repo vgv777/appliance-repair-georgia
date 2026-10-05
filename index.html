@@ -3,7 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="meta_title">სარეცხი და ჭურჭლის სარეცხი მანქანების შეკეთება</title>
+    <title data-i18n="meta_title">სარეცხი და ჭურჭლის სარეცხი მანქანების შეკეთება თბილისში</title>
+    <meta name="description" content="پПрофессиональный ремонт стиральных и посудомоечных машин на дому в Тбилиси. Выезд мастера, гарантия качества." id="metaDesc">
+    
+    <!-- SEO & Microdata Schema.org for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "GeoService Fix Tbilisi",
+      "image": "",
+      "telephone": "+995500000000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tbilisi",
+        "addressCountry": "GE"
+      },
+      "priceRange": "$$",
+      "openingHours": "Mo-Su 08:00-21:00",
+      "servesCuisine": false,
+      "description": "Professional washing machine and dishwasher repair service in Tbilisi."
+    }
+    </script>
+
     <style>
         :root {
             --primary: #2563eb;
@@ -59,41 +81,42 @@
         .hero {
             background: linear-gradient(135deg, #1e4ed8, #2563eb);
             color: white;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             margin-bottom: 1rem;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
+            font-size: 1.15rem;
+            max-width: 650px;
             margin: 0 auto 2rem;
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         .btn {
             background: #ffffff;
             color: var(--primary);
-            padding: 0.75rem 1.5rem;
+            padding: 0.75rem 2rem;
             border-radius: 0.375rem;
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
-            transition: background 0.2s;
+            transition: background 0.2s, transform 0.1s;
         }
 
         .btn:hover {
             background: #f1f5f9;
+            transform: translateY(-2px);
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
         }
 
         .section-title {
@@ -129,9 +152,34 @@
             color: var(--gray);
         }
 
+        .prices-section {
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 4rem 1rem;
+        }
+
+        .price-table {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .price-table th, .price-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .price-table th {
+            background: #f8fafc;
+            color: var(--text-color);
+            font-weight: bold;
+        }
+
         .contact-section {
             background: var(--card-bg);
-            border-top: 1px solid var(--border);
             padding: 4rem 1rem;
             text-align: center;
         }
@@ -168,7 +216,7 @@
 <body>
 
     <header>
-        <div class="logo" data-i18n="logo_text">🔧 GeoService Fix</div>
+        <div class="logo" data-i18n="logo_text">🔧 GeoService Fix Tbilisi</div>
         <div class="lang-switcher">
             <select id="langSelect" onchange="changeLanguage(this.value)">
                 <option value="ka">ქართული</option>
@@ -179,9 +227,9 @@
     </header>
 
     <section class="hero">
-        <h1 data-i18n="hero_title">სარეცხი და ჭურჭლის სარეცხი მანქანების პროფესიონალური შეკეთება</h1>
-        <p data-i18n="hero_subtitle">სწრაფი გამოძახება სახლში, გარანტიით და ხარისხიანად მთელ საქართველოში.</p>
-        <a href="#contact" class="btn" data-i18n="hero_btn">გამოძახება</a>
+        <h1 data-i18n="hero_title">სარეცხი და ჭურჭლის სარეცხი მანქანების პროფესიონალური შეკეთება თბილისში</h1>
+        <p data-i18n="hero_subtitle">სწრაფი გამოძახება სახლში, ზუსტი დიაგნოსტიკა და გარანტია შესრულებულ სამუშაოზე თბილისის მასშტაბით.</p>
+        <a href="#contact" class="btn" data-i18n="hero_btn">ოსტატის გამოძახება</a>
     </section>
 
     <div class="container">
@@ -192,8 +240,8 @@
                 <h3 data-i18n="service_wash_title">სარეცხი მანქანების შეკეთება</h3>
                 <p data-i18n="service_wash_desc">ვათვალიერებთ და ვათავისუფლებთ ნებისმიერი სირთულის დაზიანებისგან: არ რთავს, არ აცხელებს წყალს, ღრიალებს ან არ წურავს.</p>
                 <ul>
-                    <li data-i18n="wash_li_1">ტამბურისა და ძრავის შეკეთება</li>
-                    <li data-i18n="wash_li_2">ტუმბოს (სპილენძის/ტუმბოს) შეცვლა</li>
+                    <li data-i18n="wash_li_1">დოლურისა და ძრავის შეკეთება</li>
+                    <li data-i18n="wash_li_2">ტუმბოსა და სადინარების შეცვლა</li>
                     <li data-i18n="wash_li_3">ელექტრონული დაფის აღდგენა</li>
                 </ul>
             </div>
@@ -211,25 +259,58 @@
         </div>
     </div>
 
+    <section class="prices-section">
+        <div class="container" style="padding: 0;">
+            <h2 class="section-title" data-i18n="prices_heading">სავარაუდო ფასები</h2>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="table_service">მომსახურება</th>
+                        <th data-i18n="table_price">ღირებულება</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-i18n="pr_1">დიაგნოსტიკა (შეკეთებაზე თანხმობის შემთხვევაში უფასოა)</td>
+                        <td>20 - 40 GEL</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="pr_2">ტუმბოს (სპილენძის) შეცვლა / შეკეთება</td>
+                        <td>60 - 120 GEL</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="pr_3">გამაცხელებელი ელემენტის (ტენის) შეცვლა</td>
+                        <td>70 - 150 GEL</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="pr_4">ელექტრონული დაფის (მოდულის) შეკეთება</td>
+                        <td>80 - 250 GEL</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
     <section class="contact-section" id="contact">
         <div class="contact-box">
-            <h2 class="section-title" data-i18n="contact_heading" style="margin-bottom: 1rem;">დაგვიკავშირდით</h2>
-            <p data-i18n="contact_text">დაგვირეკეთ ნებისმიერ დროს, ვმუშაობთ ყოველდღე.</p>
+            <h2 class="section-title" data-i18n="contact_heading" style="margin-bottom: 1rem;">დაგვიკავშირდით თბილისში</h2>
+            <p data-i18n="contact_text">მოვემსახურებით თბილისის ყველა უბანს. დაგვირეკეთ ნებისმიერ დროს!</p>
             <a href="tel:+995500000000" class="phone-number">+995 500 00 00 00</a>
         </div>
     </section>
 
     <footer>
-        <p data-i18n="footer_text">&copy; 2026 GeoService Fix. ყველა უფლება დაცულია.</p>
+        <p data-i18n="footer_text">&copy; 2026 GeoService Fix Tbilisi. ყველა უფლება დაცულია.</p>
     </footer>
 
     <script>
         const translations = {
             ka: {
-                meta_title: "სარეცხი და ჭურჭლის სარეცხი მანქანების შეკეთება",
-                logo_text: "🔧 GeoService Fix",
-                hero_title: "სარეცხი და ჭურჭლის სარეცხი მანქანების პროფესიონალური შეკეთება",
-                hero_subtitle: "სწრაფი გამოძახება სახლში, გარანტიით და ხარისხიანად.",
+                meta_title: "სარეცხი და ჭურჭლის სარეცხი მანქანების შეკეთება თბილისში",
+                meta_desc: "პროფესიონალური სარეცხი და ჭურჭლის სარეცხი მანქანების შეკეთება სახლში თბილისში. გარანტიით.",
+                logo_text: "🔧 GeoService Fix Tbilisi",
+                hero_title: "სარეცხი და ჭურჭლის სარეცხი მანქანების პროფესიონალური შეკეთება თბილისში",
+                hero_subtitle: "სწრაფი გამოძახება სახლში, ზუსტი დიაგნოსტიკა და გარანტია შესრულებულ სამუშაოზე თბილისის მასშტაბით.",
                 hero_btn: "ოსტატის გამოძახება",
                 services_heading: "ჩვენი მომსახურება",
                 service_wash_title: "სარეცხი მანქანების შეკეთება",
@@ -242,15 +323,23 @@
                 dish_li_1: "წყლის მიწოდებისა და გაჟონვის აღმოფხვრა",
                 dish_li_2: "გამაცხელებელი ელემენტის შეცვლა",
                 dish_li_3: "ფილტრებისა და სადინარების გაწმენდა",
-                contact_heading: "დაგვიკავშირდით",
-                contact_text: "დაგვირეკეთ ნებისმიერ დროს, ვმუშაობთ ყოველდღე.",
-                footer_text: "© 2026 GeoService Fix. ყველა უფლება დაცულია."
+                prices_heading: "სავარაუდო ფასები",
+                table_service: "მომსახურება",
+                table_price: "ღირებულება",
+                pr_1: "დიაგნოსტიკა (შეკეთებაზე თანხმობის შემთხვევაში უფასოა)",
+                pr_2: "ტუმბოს შეცვლა / შეკეთება",
+                pr_3: "გამაცხელებელი ელემენტის (ტენის) შეცვლა",
+                pr_4: "ელექტრონული დაფის შეკეთება",
+                contact_heading: "დაგვიკავშირდით თბილისში",
+                contact_text: "მოვემსახურებით თბილისის ყველა უბანს. დაგვირეკეთ ნებისმიერ დროს!",
+                footer_text: "© 2026 GeoService Fix Tbilisi. ყველა უფლება დაცულია."
             },
             ru: {
-                meta_title: "Ремонт стиральных и посудомоечных машин в Грузии",
-                logo_text: "🔧 GeoService Fix",
-                hero_title: "Профессиональный ремонт стиральных и посудомоечных машин",
-                hero_subtitle: "Быстрый выезд на дом, с гарантией и высоким качеством.",
+                meta_title: "Ремонт стиральных и посудомоечных машин в Тбилиси",
+                meta_desc: "Профессиональный ремонт стиральных и посудомоечных машин на дому в Тбилиси. Выезд мастера, доступные цены.",
+                logo_text: "🔧 GeoService Fix Tbilisi",
+                hero_title: "Профессиональный ремонт стиральных и посудомоечных машин в Тбилиси",
+                hero_subtitle: "Быстрый выезд на дом по всем районам Тбилиси, точная диагностика и гарантия на работу.",
                 hero_btn: "Вызвать мастера",
                 services_heading: "Наши услуги",
                 service_wash_title: "Ремонт стиральных машин",
@@ -263,15 +352,23 @@
                 dish_li_1: "Устранение протечек воды",
                 dish_li_2: "Замена ТЭНа (нагревателя)",
                 dish_li_3: "Очистка фильтров и сливной системы",
-                contact_heading: "Свяжитесь с нами",
-                contact_text: "Звоните в любое время, работаем без выходных.",
-                footer_text: "© 2026 GeoService Fix. Все права защищены."
+                prices_heading: "Примерные цены",
+                table_service: "Услуга",
+                table_price: "Стоимость",
+                pr_1: "Диагностика (при ремонте бесплатно)",
+                pr_2: "Замена / ремонт сливной помпы",
+                pr_3: "Замена нагревательного элемента (ТЭНа)",
+                pr_4: "Ремонт электронного модуля управления",
+                contact_heading: "Свяжитесь с нами в Тбилиси",
+                contact_text: "Работаем во всех районах Тбилиси. Звоните в любое время без выходных!",
+                footer_text: "© 2026 GeoService Fix Tbilisi. Все права защищены."
             },
             en: {
-                meta_title: "Washing Machine & Dishwasher Repair",
-                logo_text: "🔧 GeoService Fix",
-                hero_title: "Professional Washing Machine & Dishwasher Repair",
-                hero_subtitle: "Fast home service with warranty and high quality.",
+                meta_title: "Washing Machine & Dishwasher Repair in Tbilisi",
+                meta_desc: "Professional home appliance repair services for washing machines and dishwashers in Tbilisi, Georgia.",
+                logo_text: "🔧 GeoService Fix Tbilisi",
+                hero_title: "Professional Washing Machine & Dishwasher Repair in Tbilisi",
+                hero_subtitle: "Fast home service across all districts of Tbilisi, accurate diagnostics and warranty included.",
                 hero_btn: "Call a Technician",
                 services_heading: "Our Services",
                 service_wash_title: "Washing Machine Repair",
@@ -284,16 +381,30 @@
                 dish_li_1: "Water leak troubleshooting",
                 dish_li_2: "Heating element replacement",
                 dish_li_3: "Filter and drainage system cleaning",
-                contact_heading: "Contact Us",
-                contact_text: "Call us anytime, we work every day.",
-                footer_text: "© 2026 GeoService Fix. All rights reserved."
+                prices_heading: "Estimated Pricing",
+                table_service: "Service",
+                table_price: "Price",
+                pr_1: "Diagnostics (Free if repaired)",
+                pr_2: "Drain pump replacement / repair",
+                pr_3: "Heating element replacement",
+                pr_4: "Control board repair",
+                contact_heading: "Contact Us in Tbilisi",
+                contact_text: "Serving all districts of Tbilisi. Call us anytime!",
+                footer_text: "© 2026 GeoService Fix Tbilisi. All rights reserved."
             }
         };
 
         function changeLanguage(lang) {
             document.getElementById('htmlRoot').setAttribute('lang', lang);
+            
+            // Обновляем title и description динамически
+            if (translations[lang]) {
+                document.title = translations[lang].meta_title;
+                document.getElementById('metaDesc').setAttribute('content', translations[lang].meta_desc);
+            }
+
             const elements = document.querySelectorAll('[data-i18n]');
-            elements.features = elements.forEach(el => {
+            elements.forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang] && translations[lang][key]) {
                     el.textContent = translations[lang][key];
@@ -302,7 +413,6 @@
             localStorage.setItem('selectedLang', lang);
         }
 
-        // Загрузка сохраненного языка при открытии
         window.onload = function() {
             const savedLang = localStorage.getItem('selectedLang') || 'ka';
             document.getElementById('langSelect').value = savedLang;
